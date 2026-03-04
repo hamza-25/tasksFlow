@@ -1,0 +1,20 @@
+{
+  "name": "tasksflow",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/hamza-25/tasksFlow#readme",
+  "bugs": {
+    "url": "https://github.com/hamza-25/tasksFlow/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/hamza-25/tasksFlow.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
