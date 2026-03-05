@@ -13,6 +13,7 @@ app.use((_req: Request, res: Response, next: NextFunction) => {
     next(new AppError('Route not found', 404));
 });
 
+// Global error handling middleware
 app.use(errorHandler);
 
 export default app;
