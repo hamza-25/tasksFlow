@@ -1,15 +1,18 @@
-import express, {type Request, type Response, type Application} from 'express';
+import express, {type Request, type Response, type Application, type NextFunction} from 'express';
 import dotenv from 'dotenv';
 import authRoute from './modules/auth/auth.routes.js';
 dotenv.config();
+import { errorHandler } from './utils/errorHandler.js';
+import AppError from './utils/AppError.js';
  
 const app: Application = express();
 
 app.use('/api/auth', authRoute);
 
-app.use((_req, res, _next) => {
-    res.status(404).json({message: 'Route not found'});
+app.use((_req: Request, res: Response, next: NextFunction) => {
+    next(new AppError('Route not found', 404));
 });
 
+app.use(errorHandler);
 
 export default app;
