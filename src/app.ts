@@ -5,9 +5,9 @@ dotenv.config();
  
 const app: Application = express();
 
-app.use('/auth', authRoute);
-app.get('/', (req: Request, res: Response) => {
-    res.status(200).json({message: 'Hello, World!'});
+app.use('/api/auth', authRoute);
+app.get('*', (req: Request, res: Response) => {
+    res.status(404).json({message: 'Wrong URI endpoint'});
 });
 
 export default app;
