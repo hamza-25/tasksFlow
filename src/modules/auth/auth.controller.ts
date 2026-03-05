@@ -1,9 +1,11 @@
 import {type Request, type Response} from 'express';
+import { sendResponse } from '../../utils/sendResponse.js';
 
 export const login = async (req: Request, res: Response) => {
-    return res.status(200).json({message: 'Login successful'});
+    sendResponse(res, 200, 'Login successful')
 }  
 
 export const register = async (req: Request, res: Response) => {
-    return res.status(200).json({message: 'Registration successful'});
+    sendResponse(res, 200, 'Registration successful')
+
 }  
