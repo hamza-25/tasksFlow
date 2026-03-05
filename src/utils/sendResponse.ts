@@ -1,6 +1,6 @@
 import { type Response } from "express"
 
-export const sendResponse = (res: Response, statusCode: number, message: string, data=null) => {
+export const sendResponse = (res: Response, statusCode: number, message: string, data: [] | {} | null = null) => {
     return res.status(statusCode).json({
         success: true,
         statusCode,
