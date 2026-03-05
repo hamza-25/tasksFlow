@@ -9,3 +9,5 @@ authRouter.post('/login', (req, res) => {
 authRouter.post('/register', (req, res) => {
     return res.json({message: 'Registration successful'});
 });
+
+export default authRouter;
