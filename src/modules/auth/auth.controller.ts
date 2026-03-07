@@ -1,8 +1,9 @@
 import {type Request, type Response} from 'express';
 import { sendResponse } from '../../utils/sendResponse.js';
+import { prisma } from '../../database/database.js';
 
 export const login = async (req: Request, res: Response) => {
-    sendResponse(res, 200, 'Login successful')
+    sendResponse(res, 200, 'Login successful');
 }  
 
 export const register = async (req: Request, res: Response) => {
