@@ -7,6 +7,9 @@ import AppError from './utils/AppError.js';
  
 const app: Application = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use('/api/auth', authRoute);
 
 app.use((_req: Request, res: Response, next: NextFunction) => {
