@@ -15,4 +15,6 @@ export const generateRefreshToken = (payload: payloadData) => {
 export const verifyAccessToken = (accessToken: string): payloadData => {
     return jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET as string) as payloadData;
 }
-export const verifyRefreshToken = (refreshToken: string) => {}
+export const verifyRefreshToken = (refreshToken: string): payloadData => {
+    return jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET as string) as payloadData;
+}
