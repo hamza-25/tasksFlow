@@ -1,10 +1,5 @@
 import jwt from 'jsonwebtoken';
-
-interface payloadData {
-    email: string;
-    userId: number;
-    role: string
-}
+import { type payloadData } from './interfaces.js';
 
 export const generateAccessToken = (payload: payloadData) => {
     return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET as string, { expiresIn: '15m' });
