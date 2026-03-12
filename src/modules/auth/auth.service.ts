@@ -33,8 +33,8 @@ export const authLogin = async (req: Request, res: Response) => {
     if(!isPasswordValid)
         throw new AppError('Invalid email or password', 400);
 
-    const accessToken = generateAccessToken({email: user.email, userId: user.id, role: user.role});
-    const refreshToken = generateRefreshToken({email: user.email, userId: user.id, role: user.role});
+    const accessToken = generateAccessToken({email: user.email, userId: user.id});
+    const refreshToken = generateRefreshToken({email: user.email, userId: user.id});
 
     await authRepository.updateRefreshToken(user.id, refreshToken);
 
